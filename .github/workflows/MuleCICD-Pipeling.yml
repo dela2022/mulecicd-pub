@@ -1,4 +1,4 @@
-name: Manual workflow
+name: Mulesoft CICD workflow
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
     branches: [main]
     inputs:
       name:
-        description: 'prod deployment ?'
+        description: 'Start Mulesofor CI /CD deployment. Please confirm?'
         default: 'yes'
         required: true
 
