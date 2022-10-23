@@ -14,8 +14,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.4.0-20211026</app.runtime>
-		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
-		<munit.version>2.3.6</munit.version>
+		<mule.maven.plugin.version>3.6.3</mule.maven.plugin.version>
+		<!--   <munit.version>2.3.6</munit.version> -->
 	</properties>
 
 	<build>
@@ -43,8 +43,8 @@
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.mulesoft.munit.tools</groupId>
+			<!-- <plugin>
+				  <groupId>com.mulesoft.munit.tools</groupId>
 				<artifactId>munit-maven-plugin</artifactId>
 				<version>${munit.version}</version>
 				<executions>
@@ -60,14 +60,14 @@
 				<configuration>
 					<coverage>
 						<runCoverage>true</runCoverage>
- 						<failBuild>false</failBuild>
-						<requiredApplicationCoverage>95</requiredApplicationCoverage> 
+						<failBuild>false</failBuild>
+						<requiredApplicationCoverage>80</requiredApplicationCoverage>
 						<formats>
 							<format>html</format>
 						</formats>
 					</coverage>
 				</configuration>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 
@@ -90,7 +90,7 @@
 			<version>1.5.6</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.mulesoft.munit</groupId>
 			<artifactId>munit-runner</artifactId>
 			<version>2.3.6</version>
@@ -103,7 +103,7 @@
 			<version>2.3.6</version>
 			<classifier>mule-plugin</classifier>
 			<scope>test</scope>
-		</dependency>
+		</dependency>  -->
 		<dependency>
 			<groupId>org.mule.weave</groupId>
 			<artifactId>assertions</artifactId>
@@ -123,6 +123,12 @@
 			<id>mulesoft-releases</id>
 			<name>MuleSoft Releases Repository</name>
 			<url>https://repository.mulesoft.org/releases/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>anypoint-exchange-v3</id>
+			<name>Anypoint Exchange V3</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 			<layout>default</layout>
 		</repository>
 	</repositories>
